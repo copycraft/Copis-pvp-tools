@@ -1,4 +1,5 @@
 [![Available on CurseForge](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true)](https://www.curseforge.com/minecraft/mc-mods/blamazing)
+[![Available on Modrinth](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/modrinth_64h.png?raw=true)](https://modrinth.com/mod/copis-pvp-tools)
 [![Requires Fabric API](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/fabric-api_64h.png?raw=true)](https://modrinth.com/mod/fabric-api/)
 [![Requires Architectury API](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/architectury-api_64h.png)](https://modrinth.com/mod/architectury-api)
 
