@@ -1,0 +1,46 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "copis_pvp_tools"
+version = "${version}"
+displayName = "Copis-pvp-tools"
+authors = ""
+description = '''
+
+'''
+#logoFile = ""
+
+[[mods.entrypoints]]
+entrypoint = "main"
+modInitializer = "org.copycraftDev.copisPvpTools.CopisPvpToolsNeoForge"
+
+[[mods.entrypoints]]
+entrypoint = "client"
+modInitializer = "org.copycraftDev.copisPvpTools.CopisPvpToolsClient"
+
+[[dependencies.copis_pvp_tools]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.copis_pvp_tools]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1, )"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.copis_pvp_tools]]
+modId = "architectury"
+type = "required"
+versionRange = "[13.0.8,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[mixins]]
+config = "copis-pvp-tools.mixins.json"
