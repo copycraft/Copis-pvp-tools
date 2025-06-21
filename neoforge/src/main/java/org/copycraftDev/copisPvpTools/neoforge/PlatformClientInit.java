@@ -9,14 +9,22 @@ import org.copycraftDev.copisPvpTools.CopisPvpTools;
 import org.copycraftDev.copisPvpTools.gg.KillGGClientHandler;
 import org.copycraftDev.copisPvpTools.pvp.PotionExpiryNotifier;
 
+
+/**
+ * NeoForge implementation: registers client-side handlers for NeoForge.
+ */
 @Mod(value = CopisPvpTools.MOD_ID, dist = Dist.CLIENT)
-public final class CopisPvpToolsClient {
+public final class PlatformClientInit {
 
     private final PotionExpiryNotifier notifier = new PotionExpiryNotifier();
     private final KillGGClientHandler killGGClientHandler = KillGGClientHandler.INSTANCE;
 
-    public CopisPvpToolsClient() {
+    public PlatformClientInit() {
+        // Run common init
+        CopisPvpTools.init();
+        // Register tick handler
         ClientTickEvent.CLIENT_POST.register(this::onClientTick);
+        // Register health border renderer on NeoForge event bus
         NeoForge.EVENT_BUS.register(new HealthBorderRendererNeoForge());
     }
 
