@@ -7,5 +7,6 @@ public final class CopisPvpTools {
     public static final String MOD_ID = "copis_pvp_tools";
 
     public static void init() {
+
     }
 }

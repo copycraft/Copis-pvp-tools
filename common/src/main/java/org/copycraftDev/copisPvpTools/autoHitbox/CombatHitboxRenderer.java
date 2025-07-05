@@ -24,7 +24,7 @@ public class CombatHitboxRenderer {
     public static void renderCombatBoxes(PoseStack poseStack, MultiBufferSource buffer, float partialTick) {
         var client = Minecraft.getInstance();
 
-        if (!CombatTracker.isInCombat()) return;
+        if (!HitboxConfig.enabled || !CombatTracker.isInCombat()) return;
 
         var level = client.level;
         var camera = client.gameRenderer.getMainCamera();
@@ -39,7 +39,7 @@ public class CombatHitboxRenderer {
                     poseStack,
                     buffer.getBuffer(RenderType.lines()),
                     box,
-                    1.0f, 0.0f, 0.0f, 1.0f // red hitbox
+                    1.0f, 0.0f, 0.0f, 1.0f
             );
         }
     }

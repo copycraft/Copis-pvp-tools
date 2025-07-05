@@ -4,30 +4,32 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.player.LocalPlayer;
+import org.copycraftDev.copisPvpTools.fabric.config.HealthBorderConfig;
 
 public class HealthBorderRendererImpl {
-    private static final float MAX_HEALTH = 6f; // 3 hearts
-    private static final float MIN_HEALTH = 0.5f; // half heart
-    private static final int MIN_BORDER_WIDTH = 5;
-    private static final int MAX_BORDER_WIDTH = 30;
-
     public static void register() {
         HudRenderCallback.EVENT.register((graphics, delta) -> {
             LocalPlayer player = Minecraft.getInstance().player;
             if (player == null) return;
 
+            // Load configuration values
+            HealthBorderConfig config = HealthBorderConfig.get();
+            float maxHealth = config.maxHealth;
+            float minHealth = config.minHealth;
+            int minBorderWidth = config.minBorderWidth;
+            int maxBorderWidth = config.maxBorderWidth;
+
             float health = player.getHealth();
 
-            // Only render if health is less or equal to MAX_HEALTH (3 hearts)
-            if (health > MAX_HEALTH) return;
+            // Only render if health is less or equal to maxHealth
+            if (health > maxHealth) return;
 
-            // Clamp health to [MIN_HEALTH, MAX_HEALTH] to avoid weird values
-            float clampedHealth = Math.max(MIN_HEALTH, Math.min(health, MAX_HEALTH));
+            // Clamp health to [minHealth, maxHealth]
+            float clampedHealth = Math.max(minHealth, Math.min(health, maxHealth));
 
-            // Interpolate border width inversely proportional to health:
-            // At MAX_HEALTH → MIN_BORDER_WIDTH, at MIN_HEALTH → MAX_BORDER_WIDTH
-            float t = (MAX_HEALTH - clampedHealth) / (MAX_HEALTH - MIN_HEALTH);
-            int borderWidth = MIN_BORDER_WIDTH + Math.round(t * (MAX_BORDER_WIDTH - MIN_BORDER_WIDTH));
+            // Interpolate border width inversely proportional to health
+            float t = (maxHealth - clampedHealth) / (maxHealth - minHealth);
+            int borderWidth = minBorderWidth + Math.round(t * (maxBorderWidth - minBorderWidth));
 
             var window = Minecraft.getInstance().getWindow();
             int width = window.getGuiScaledWidth();
@@ -35,7 +37,7 @@ public class HealthBorderRendererImpl {
 
             // Draw the border with fading alpha
             for (int i = 0; i < borderWidth; i++) {
-                int alpha = (int)(144 * (1.0 - (float)i / borderWidth)); // fade effect
+                int alpha = (int) (144 * (1.0 - (float) i / borderWidth)); // fade effect
                 int color = (alpha << 24) | 0xFF0000; // Red with alpha
 
                 // Top border
