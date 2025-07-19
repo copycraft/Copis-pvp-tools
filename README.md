@@ -1,25 +1,30 @@
-[![Available on CurseForge](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true)](https://www.curseforge.com/minecraft/mc-mods/blamazing)
-[![Available on Modrinth](https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/modrinth_64h.png?raw=true)](https://modrinth.com/mod/copis-pvp-tools)
-[![Requires Fabric API](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/fabric-api_64h.png?raw=true)](https://modrinth.com/mod/fabric-api/)
-[![Requires Architectury API](https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/architectury-api_64h.png)](https://modrinth.com/mod/architectury-api)
+# <p align="center"><b>Copis PvP Tools</b></p>
 
-
-# Copis Pvp Tools
-
-This is a mod that plays the XP level-up sound when one of your crucial effects runs out, and adds a screen border when your health is low.
-
-It also has a config option that lets you enable AutoGG. When enabled, it will say "gg" in chat when you kill a player or die.
-
-This mod works on both Forge and Fabric.
-
-If you're above High Tier 5, you shouldn't be using this. It's considered cheating in some situations, so don't use it in competitions.
+<p align="center">
+  <a href="https://www.curseforge.com/minecraft/mc-mods/copis-pvp-tools">
+    <img src="https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/curseforge_64h.png?raw=true" alt="Available on CurseForge" />
+  </a>
+  <a href="https://modrinth.com/mod/copis-pvp-tools">
+    <img src="https://github.com/intergrav/devins-badges/blob/v3/assets/cozy/available/modrinth_64h.png?raw=true" alt="Available on Modrinth" />
+  </a>
+  <a href="https://modrinth.com/mod/fabric-api/">
+    <img src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/fabric-api_64h.png?raw=true" alt="Requires Fabric API" />
+  </a>
+  <a href="https://modrinth.com/mod/architectury-api">
+    <img src="https://raw.githubusercontent.com/intergrav/devins-badges/refs/heads/v3/assets/cozy/requires/architectury-api_64h.png" alt="Requires Architectury API" />
+  </a>
+</p>
 
 # Features
 
-- Plays XP level-up sound when a crucial effect runs out  
-- Adds screen border when you're below 3 hearts  
+## Low Health Border
+  - Adds screen border when you're below 3 hearts
+## Potion Notifier
+  - Plays XP level-up sound when a crucial effect runs out
+## Config and addtional features
 - Optional AutoGG feature (says "gg" on kill or death)  
-- Supports both Forge and Fabric
+
+This mod works on both Forge and Fabric.
 
 # Disclaimer
 
