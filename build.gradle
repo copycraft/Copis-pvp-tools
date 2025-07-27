@@ -34,6 +34,7 @@ subprojects {
     dependencies {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         mappings loom.officialMojangMappings()
+        implementation 'com.twelvemonkeys.imageio:imageio-core:3.8.0'
     }
 
     java {
